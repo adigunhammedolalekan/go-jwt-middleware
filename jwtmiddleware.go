@@ -50,6 +50,8 @@ type Options struct {
 	// Important to avoid security issues described here: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/
 	// Default: nil
 	SigningMethod jwt.SigningMethod
+
+	Store JwtStore
 }
 
 type JWTMiddleware struct {
@@ -81,7 +83,9 @@ func New(options ...Options) *JWTMiddleware {
 	if opts.Extractor == nil {
 		opts.Extractor = FromAuthHeader
 	}
-
+	if opts.Store == nil {
+		opts.Store = DefaultJwtStore
+	}
 	return &JWTMiddleware{
 		Options: opts,
 	}
@@ -197,6 +201,10 @@ func (m *JWTMiddleware) CheckJWT(w http.ResponseWriter, r *http.Request) error {
 		m.Options.ErrorHandler(w, r, errorMsg)
 		m.logf("  Error: No credentials found (CredentialsOptional=false)")
 		return fmt.Errorf(errorMsg)
+	}
+
+	if m.Options.Store.Revoked(token) {
+		return ErrRevoked
 	}
 
 	// Now parse the token

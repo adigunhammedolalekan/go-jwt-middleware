@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="19169d4a-a1dd-45ec-b2da-d5bf70a22846" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/store.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/martini-example/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/martini-example/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/negroni-example/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/negroni-example/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jwtmiddleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/jwtmiddleware.go" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1U1QYkVoRdBoAMjiC6sMkgc4k9e" />
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Go Test.TestDefaultStore_Revoke in github.com/adigunhammedolalekan/go-jwt-middleware">
+    <configuration name="TestDefaultStore_Put in github.com/adigunhammedolalekan/go-jwt-middleware" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-jwt-middleware" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/adigunhammedolalekan/go-jwt-middleware" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestDefaultStore_Put$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDefaultStore_Revoke in github.com/adigunhammedolalekan/go-jwt-middleware" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-jwt-middleware" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/adigunhammedolalekan/go-jwt-middleware" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestDefaultStore_Revoke$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDefaultStore_Revoked in github.com/adigunhammedolalekan/go-jwt-middleware" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-jwt-middleware" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/adigunhammedolalekan/go-jwt-middleware" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestDefaultStore_Revoked$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go test github.com/adigunhammedolalekan/go-jwt-middleware" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-jwt-middleware" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/adigunhammedolalekan/go-jwt-middleware" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestDefaultStore_Revoke in github.com/adigunhammedolalekan/go-jwt-middleware" />
+        <item itemvalue="Go Test.TestDefaultStore_Put in github.com/adigunhammedolalekan/go-jwt-middleware" />
+        <item itemvalue="Go Test.go test github.com/adigunhammedolalekan/go-jwt-middleware" />
+        <item itemvalue="Go Test.TestDefaultStore_Revoked in github.com/adigunhammedolalekan/go-jwt-middleware" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
