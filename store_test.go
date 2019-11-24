@@ -2,7 +2,7 @@ package jwtmiddleware
 
 import "testing"
 
-var d = DefaultJwtStore
+var d, _ = NewBadgerDBStore(".")
 func TestDefaultStore_Put(t *testing.T) {
 	key := "testBearerToken"
 	if err := d.Put(key); err != nil {
@@ -25,7 +25,10 @@ func TestDefaultStore_Revoked(t *testing.T) {
 }
 
 func TestAll(t *testing.T) {
-	d := DefaultJwtStore
+	d, err := NewBadgerDBStore("db")
+	if err != nil {
+		t.Fatal(err)
+	}
 	key := "Bearer Token"
 	if err := d.Put(key); err != nil {
 		t.Fatal(err)

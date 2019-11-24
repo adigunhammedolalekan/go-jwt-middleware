@@ -51,7 +51,8 @@ type Options struct {
 	// Default: nil
 	SigningMethod jwt.SigningMethod
 
-	Store JwtStore
+	Store JwtStorer
+	PassThrough []string
 }
 
 type JWTMiddleware struct {
@@ -84,7 +85,8 @@ func New(options ...Options) *JWTMiddleware {
 		opts.Extractor = FromAuthHeader
 	}
 	if opts.Store == nil {
-		opts.Store = DefaultJwtStore
+		defaultStore, _ := NewBadgerDBStore(".")
+		opts.Store = defaultStore
 	}
 	return &JWTMiddleware{
 		Options: opts,
@@ -109,10 +111,17 @@ func (m *JWTMiddleware) HandlerWithNext(w http.ResponseWriter, r *http.Request, 
 
 func (m *JWTMiddleware) Handler(h http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		path := r.URL.Path
+		for _, u := range m.Options.PassThrough {
+			if u == path {
+				h.ServeHTTP(w, r)
+				return
+			}
+		}
+
 		// Let secure process the request. If it returns an error,
 		// that indicates the request should not continue.
 		err := m.CheckJWT(w, r)
-
 		// If there was an error, do not continue.
 		if err != nil {
 			return
@@ -203,7 +212,8 @@ func (m *JWTMiddleware) CheckJWT(w http.ResponseWriter, r *http.Request) error {
 		return fmt.Errorf(errorMsg)
 	}
 
-	if m.Options.Store.Revoked(token) {
+	if revoked := m.Options.Store.Revoked(token); revoked {
+		m.Options.ErrorHandler(w, r, ErrRevoked.Error())
 		return ErrRevoked
 	}
 

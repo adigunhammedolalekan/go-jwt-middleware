@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19169d4a-a1dd-45ec-b2da-d5bf70a22846" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/store.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/martini-example/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/martini-example/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/negroni-example/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/negroni-example/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jwtmiddleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/jwtmiddleware.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store.go" beforeDir="false" afterPath="$PROJECT_DIR$/store.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/store_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +44,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestDefaultStore_Revoke in github.com/adigunhammedolalekan/go-jwt-middleware">
+  <component name="RunManager" selected="Go Test.TestAll in github.com/adigunhammedolalekan/go-jwt-middleware">
+    <configuration name="TestAll in github.com/adigunhammedolalekan/go-jwt-middleware" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-jwt-middleware" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/adigunhammedolalekan/go-jwt-middleware" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestAll$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestDefaultStore_Put in github.com/adigunhammedolalekan/go-jwt-middleware" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-jwt-middleware" />
       <working_directory value="$PROJECT_DIR$" />
@@ -91,6 +101,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestAll in github.com/adigunhammedolalekan/go-jwt-middleware" />
         <item itemvalue="Go Test.TestDefaultStore_Revoke in github.com/adigunhammedolalekan/go-jwt-middleware" />
         <item itemvalue="Go Test.TestDefaultStore_Put in github.com/adigunhammedolalekan/go-jwt-middleware" />
         <item itemvalue="Go Test.go test github.com/adigunhammedolalekan/go-jwt-middleware" />
@@ -106,10 +117,23 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/jwtmiddleware.go</url>
+          <line>173</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
