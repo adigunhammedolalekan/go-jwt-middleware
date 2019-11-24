@@ -6,7 +6,7 @@ import (
 )
 // JwtStore abstracts storage for revocable JWTs
 type JwtStorer interface {
-	// Put stores a JWT in the underlined storage implementation.
+	// Put stores a JWT token in the underlined storage implementation.
 	Put(key string) error
 	// Revoke revokes a JWT token, this should be done when a logout
 	// action is triggered by the user

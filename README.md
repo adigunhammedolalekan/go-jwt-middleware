@@ -25,7 +25,9 @@ package main
 
 import (
   "fmt"
-  "net/http"
+  jwtmiddleware "github.com/adigunhammedolalekan/go-jwt-middleware"
+"github.com/go-acme/lego/log"
+"net/http"
 
   "github.com/auth0/go-jwt-middleware"
   "github.com/dgrijalva/jwt-go"
@@ -42,6 +44,24 @@ var myHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 })
 
 func main() {
+  
+  // create a JwtStorer implementation. You can use the provided default or implement your own
+  // JwtStore abstracts storage for revocable JWTs
+  //   type JwtStorer interface {
+  //   	// Put stores a JWT token in the underlined storage implementation.
+  //   	Put(key string) error
+  //   	// Revoke revokes a JWT token, this should be done when a logout
+  //   	// action is triggered by the user
+  //   	Revoke(key string) error
+  //   	// Revoked check if key/token has been revoked or does not exists.
+  //   	// returns true if token has been revoked or false otherwise
+  //   	Revoked(key string) bool
+  // }
+  store, err := jwtmiddleware.NewBadgerDBStore("tmp/auths")
+  if err != nil {
+    // handle error
+    log.Fatal(err) 
+  }
   jwtMiddleware := jwtmiddleware.New(jwtmiddleware.Options{
     ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
       return []byte("My Secret"), nil
@@ -50,8 +70,15 @@ func main() {
     // If the signing method is not constant the ValidationKeyGetter callback can be used to implement additional checks
     // Important to avoid security issues described here: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/
     SigningMethod: jwt.SigningMethodHS256,
+    Store: store,
+    // use PassThrough property to list endpoints that does not require JWT verification
+    PassThrough: []string{"/insecure"},
   })
-
+  // at the point of login or JWT creation, user `store` to store created
+  // created JWT tokens. You can also use `store` to revoke this token
+  // a full example can be found in examples/revocable-example folder
+  // err := store.Put(token) // store a token
+  // err := store.Revoke(token) // revoke a token(when user logged out)
   app := jwtMiddleware.Handler(myHandler)
   http.ListenAndServe("0.0.0.0:3000", app)
 }

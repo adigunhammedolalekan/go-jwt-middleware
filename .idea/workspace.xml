@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19169d4a-a1dd-45ec-b2da-d5bf70a22846" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jwtmiddleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/jwtmiddleware.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store.go" beforeDir="false" afterPath="$PROJECT_DIR$/store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/store_test.go" afterDir="false" />
-    </list>
+    <list default="true" id="19169d4a-a1dd-45ec-b2da-d5bf70a22846" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
