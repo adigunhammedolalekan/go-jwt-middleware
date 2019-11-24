@@ -46,17 +46,6 @@ var myHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 func main() {
   
   // create a JwtStorer implementation. You can use the provided default or implement your own
-  // JwtStore abstracts storage for revocable JWTs
-  //   type JwtStorer interface {
-  //   	// Put stores a JWT token in the underlined storage implementation.
-  //   	Put(key string) error
-  //   	// Revoke revokes a JWT token, this should be done when a logout
-  //   	// action is triggered by the user
-  //   	Revoke(key string) error
-  //   	// Revoked check if key/token has been revoked or does not exists.
-  //   	// returns true if token has been revoked or false otherwise
-  //   	Revoked(key string) bool
-  // }
   store, err := jwtmiddleware.NewBadgerDBStore("tmp/auths")
   if err != nil {
     // handle error
@@ -71,7 +60,7 @@ func main() {
     // Important to avoid security issues described here: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/
     SigningMethod: jwt.SigningMethodHS256,
     Store: store,
-    // use PassThrough property to list endpoints that does not require JWT verification
+    // use PassThrough property to list endpoints that does not require JWT authentication
     PassThrough: []string{"/insecure"},
   })
   // at the point of login or JWT creation, user `store` to store created
@@ -164,6 +153,11 @@ type Options struct {
   // Important to avoid security issues described here: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/
   // Default: nil
   SigningMethod jwt.SigningMethod
+  
+  // A store to keep track of generated JWT token states(active, revoked)
+  Store JwtStorer
+  // use to list endpoints that does not require JWT token authentication
+  PassThrough []string
 }
 ````
 

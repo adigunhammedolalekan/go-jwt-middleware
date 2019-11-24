@@ -50,8 +50,9 @@ type Options struct {
 	// Important to avoid security issues described here: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/
 	// Default: nil
 	SigningMethod jwt.SigningMethod
-
+	// A store to keep track of generated JWT token states(active, revoked)
 	Store JwtStorer
+	// use to list endpoints that does not require JWT token authentication
 	PassThrough []string
 }
 

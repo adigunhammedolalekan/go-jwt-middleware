@@ -4,7 +4,7 @@ import (
 	"errors"
 	"github.com/dgraph-io/badger"
 )
-// JwtStore abstracts storage for revocable JWTs
+// JwtStorer abstracts storage for revocable JWTs
 type JwtStorer interface {
 	// Put stores a JWT token in the underlined storage implementation.
 	Put(key string) error
